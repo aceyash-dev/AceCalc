@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Material 3 Advanced Calculator OS</title>
+    <title>AceCalc</title>
 
     <!-- Tailwind CSS with custom MD3 config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,20 +44,20 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
     <style>
-        /* Base Material 3 Variables - Light */
+        /* Base Material 3 Variables - Light (Jetpack Compose Blurple) */
         :root {
-            --md-primary: #6750A4; --md-on-primary: #FFFFFF;
-            --md-primary-container: #EADDFF; --md-on-primary-container: #21005D;
-            --md-secondary: #625B71; --md-on-secondary: #FFFFFF;
-            --md-secondary-container: #E8DEF8; --md-on-secondary-container: #1D192B;
-            --md-tertiary: #7D5260; --md-on-tertiary: #FFFFFF;
-            --md-tertiary-container: #FFD8E4; --md-on-tertiary-container: #31111D;
-            --md-error: #B3261E; --md-on-error: #FFFFFF;
-            --md-error-container: #F9DEDC; --md-on-error-container: #410E0B;
-            --md-background: #FFFBFE; --md-on-background: #1C1B1F;
-            --md-surface: #FFFBFE; --md-on-surface: #1C1B1F;
-            --md-surface-variant: #E7E0EC; --md-on-surface-variant: #49454F;
-            --md-outline: #79747E; --md-outline-variant: #CAC4D0;
+            --md-primary: #5461F4; --md-on-primary: #FFFFFF;
+            --md-primary-container: #E0E0FF; --md-on-primary-container: #00006E;
+            --md-secondary: #5B5D72; --md-on-secondary: #FFFFFF;
+            --md-secondary-container: #DFE1F9; --md-on-secondary-container: #181A2C;
+            --md-tertiary: #77536D; --md-on-tertiary: #FFFFFF;
+            --md-tertiary-container: #FFD7F1; --md-on-tertiary-container: #2D1228;
+            --md-error: #BA1A1A; --md-on-error: #FFFFFF;
+            --md-error-container: #FFDAD6; --md-on-error-container: #410002;
+            --md-background: #FAFAFF; --md-on-background: #1A1B20;
+            --md-surface: #FAFAFF; --md-on-surface: #1A1B20;
+            --md-surface-variant: #E3E2F2; --md-on-surface-variant: #464655;
+            --md-outline: #767685; --md-outline-variant: #C7C5D6;
             --user-font: 'Roboto', sans-serif;
             --sys-font: var(--user-font);
             --calc-font: var(--user-font);
@@ -65,20 +65,20 @@
             --calc-btn-radius: 9999px; /* Dynamic Border Radius */
         }
 
-        /* Dark Theme Variables */
+        /* Dark Theme Variables (OLED-friendly Blurple) */
         .dark {
-            --md-primary: #D0BCFF; --md-on-primary: #381E72;
-            --md-primary-container: #4F378B; --md-on-primary-container: #EADDFF;
-            --md-secondary: #CCC2DC; --md-on-secondary: #332D41;
-            --md-secondary-container: #4A4458; --md-on-secondary-container: #E8DEF8;
-            --md-tertiary: #EFB8C8; --md-on-tertiary: #492532;
-            --md-tertiary-container: #633B48; --md-on-tertiary-container: #FFD8E4;
-            --md-error: #F2B8B5; --md-on-error: #601410;
-            --md-error-container: #8C1D18; --md-on-error-container: #F9DEDC;
-            --md-background: #1C1B1F; --md-on-background: #E6E1E5;
-            --md-surface: #1C1B1F; --md-on-surface: #E6E1E5;
-            --md-surface-variant: #49454F; --md-on-surface-variant: #CAC4D0;
-            --md-outline: #938F99; --md-outline-variant: #49454F;
+            --md-primary: #BCC2FF; --md-on-primary: #151AAB;
+            --md-primary-container: #3036D1; --md-on-primary-container: #E0E0FF;
+            --md-secondary: #C3C5DD; --md-on-secondary: #2D2F42;
+            --md-secondary-container: #434559; --md-on-secondary-container: #DFE1F9;
+            --md-tertiary: #E6BAD7; --md-on-tertiary: #44263E;
+            --md-tertiary-container: #5D3C55; --md-on-tertiary-container: #FFD7F1;
+            --md-error: #FFB4AB; --md-on-error: #690005;
+            --md-error-container: #93000A; --md-on-error-container: #FFDAD6;
+            --md-background: #111118; --md-on-background: #E3E2E6;
+            --md-surface: #111118; --md-on-surface: #E3E2E6;
+            --md-surface-variant: #464655; --md-on-surface-variant: #C7C5D6;
+            --md-outline: #9090A0; --md-outline-variant: #464655;
         }
 
         body { font-family: var(--sys-font); background-color: var(--md-background); color: var(--md-on-background); overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -141,7 +141,7 @@
     <!-- Navigation Drawer -->
     <nav id="nav-drawer" class="w-72 bg-surface h-full flex flex-col absolute z-50 transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 border-r border-outlineVariant shadow-md3-2 md:shadow-none flex-shrink-0">
         <div class="p-6 pb-2 text-2xl font-medium tracking-tight text-onSurface flex items-center justify-between">
-            <span>Calc OS</span>
+            <span>AceCalc</span>
             <button id="close-drawer-btn" class="md:hidden ripple p-2 rounded-full text-onSurfaceVariant hover:bg-surfaceVariant">
                 <i data-lucide="x"></i>
             </button>
@@ -355,7 +355,7 @@
 
         <!-- View: Converter -->
         <main id="view-converter" class="view-section overflow-y-auto p-4 md:p-8 flex flex-col gap-6 h-full w-full">
-            <div class="bg-surfaceContainer p-6 rounded-[24px] shadow-md3-1 bg-surface flex-shrink-0">
+            <div class="bg-surface p-6 rounded-[24px] shadow-md3-1 flex-shrink-0">
                 <label class="block text-sm font-medium text-onSurfaceVariant mb-2">Category</label>
                 <div class="relative">
                     <select id="conv-category" class="w-full bg-surfaceVariant text-onSurfaceVariant p-4 rounded-xl outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
@@ -415,7 +415,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="fin-result" class="bg-surface p-6 rounded-[24px] shadow-md3-1 hidden flex-col items-center text-center">
+                <div id="fin-result" class="bg-surface p-6 rounded-[24px] shadow-md3-1 hidden flex-col items-center text-center border border-outlineVariant">
                     <p class="text-onSurfaceVariant mb-1">Monthly Payment</p>
                     <p id="fin-monthly" class="text-5xl font-light text-primary mb-4">$0.00</p>
                     <div class="flex gap-8 w-full justify-center text-sm">
@@ -471,7 +471,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="bmi-result-card" class="bg-surface p-6 rounded-[24px] shadow-md3-1 hidden flex-col items-center text-center">
+                <div id="bmi-result-card" class="bg-surface p-6 rounded-[24px] shadow-md3-1 hidden flex-col items-center text-center border border-outlineVariant">
                     <p class="text-onSurfaceVariant mb-1">Your BMI</p>
                     <p id="bmi-score" class="text-6xl font-light text-primary mb-2">0.0</p>
                     <p id="bmi-category" class="text-xl font-medium px-4 py-1 rounded-full bg-surfaceVariant text-onSurfaceVariant">Unknown</p>
@@ -508,7 +508,7 @@
                         </select>
                         <i data-lucide="chevron-down" class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-onSurfaceVariant"></i>
                     </div>
-                    <div id="wt-result" class="bg-primaryContainer text-onPrimaryContainer p-6 rounded-[24px] text-center hidden flex-col items-center gap-2 shadow-inner">
+                    <div id="wt-result" class="bg-primaryContainer text-onPrimaryContainer p-6 rounded-[24px] text-center hidden flex-col items-center gap-2 shadow-inner border border-outlineVariant/30">
                         <p id="wt-date" class="text-lg font-medium opacity-80">...</p>
                         <p id="wt-time" class="text-6xl font-light">00:00:00</p>
                         <p id="wt-abbr" class="text-sm font-bold bg-surface/30 px-3 py-1 rounded-full mt-2">...</p>
@@ -584,7 +584,7 @@
 
             <div class="p-4 bg-surface shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] border-t border-outlineVariant flex items-center gap-2 flex-shrink-0">
                 <form id="ai-chat-form" class="w-full flex items-center gap-2 relative max-w-4xl mx-auto">
-                    <input type="text" id="ai-chat-input" placeholder="Ask a math question... (e.g. Integral of x^2)" autocomplete="off" class="flex-grow bg-surfaceVariant text-onSurface p-4 pl-5 pr-14 rounded-full outline-none focus:ring-2 focus:ring-primary transition-all shadow-inner">
+                    <input type="text" id="ai-chat-input" placeholder="Ask a math question... (e.g. Integral of x^2)" autocomplete="off" class="flex-grow bg-surfaceVariant text-onSurface p-4 pl-5 pr-14 rounded-full outline-none focus:ring-2 focus:ring-primary transition-all shadow-inner border border-outlineVariant/30">
                     <button type="submit" class="absolute right-2 p-2 bg-primary text-onPrimary rounded-full ripple flex items-center justify-center hover:shadow-md3-1 transition-shadow w-10 h-10">
                         <i data-lucide="send" class="w-5 h-5 ml-[-2px]"></i>
                     </button>
@@ -647,7 +647,7 @@
                             <p class="font-medium text-onSurface mb-1">Material You Base Color</p>
                             <p class="text-sm text-onSurfaceVariant mb-3">Select a HEX color to generate a custom Material 3 palette natively.</p>
                             <div class="flex flex-wrap items-center gap-3">
-                                <input type="color" id="base-color-picker" value="#6750A4" class="w-12 h-12 rounded cursor-pointer border-none p-0 bg-transparent flex-shrink-0">
+                                <input type="color" id="base-color-picker" value="#5461F4" class="w-12 h-12 rounded cursor-pointer border-none p-0 bg-transparent flex-shrink-0">
                                 <button id="apply-color-btn" class="px-5 py-2 bg-secondaryContainer text-onSecondaryContainer rounded-full ripple font-medium text-sm">Generate</button>
                                 <button id="reset-color-btn" class="px-5 py-2 text-primary hover:bg-primaryContainer rounded-full ripple font-medium text-sm transition-colors">Reset Colors</button>
                             </div>
@@ -720,8 +720,8 @@
 
     <script>
         /** GLOBAL STATE & UTILITIES */
-        const APP_ID = 'advanced-calc-os-v5';
-        const AI_APP_ID = 'advanced-calc-ai-v5';
+        const APP_ID = 'advanced-calc-os-v6';
+        const AI_APP_ID = 'advanced-calc-ai-v6';
         
         const state = {
             view: 'standard',
