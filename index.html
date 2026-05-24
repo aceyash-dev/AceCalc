@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>AceCalc</title>
 
-    <!-- Tailwind CSS with custom MD3 config -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -81,7 +83,7 @@
             --md-outline: #9090A0; --md-outline-variant: #464655;
         }
 
-        body { font-family: var(--sys-font); background-color: var(--md-background); color: var(--md-on-background); overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--md-background); color: var(--md-on-background); overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; }
         .calc-display-main, .calc-display-sub, .calc-grid, #prog-main-disp { font-family: var(--calc-font); }
         #ai-chat-box { font-family: var(--ai-font); }
 
